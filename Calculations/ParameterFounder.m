@@ -21,7 +21,7 @@ fprintf(' %f microFarad \n',C_DC*1e6);
 
 
 %% Determination of Maximum Duty Cycle
-D_max= 0.6 ; % for CCM mode, it is bigger than 0.5
+D_max= 0.45 ; % for CCM mode, it is bigger than 0.5
 V_Ro= (D_max/(1-D_max))*V_dc_min;
 V_ds= V_dc_max+V_Ro;
 
