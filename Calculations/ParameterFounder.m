@@ -7,7 +7,7 @@ V_line_max=230 ; % Vrms
 V_dc_min= 280; % 5 percentage ripple
 V_dc_max=sqrt(2)*V_line_max;
 Output_power= 15; % Watt
-Efficiency= 0.95 ; % between 0-1 
+Efficiency= 0.8 ; % between 0-1 
 Input_power= Output_power/Efficiency;
 
 %% DC Link Capacitor Calculation
@@ -26,8 +26,8 @@ V_Ro= (D_max/(1-D_max))*V_dc_min;
 V_ds= V_dc_max+V_Ro;
 
 %% Lm Determination
-f_s= 45000; % Switching Frequecny Hertz
-K_f= 0.3; % for ccm 0.25-0.50 
+f_s= 40000; % Switching Frequecny Hertz
+K_f= 1; % for ccm 0.25-0.50 
 L_m= (( V_dc_min*D_max)^2)/(2*Input_power*f_s*K_f)...
     *1e3; % mili Henry
 fprintf('% f mH \n', L_m);
@@ -42,8 +42,8 @@ Ids_rms=sqrt((3*I_edc^2) + ((Delta_Ids/2)^2*D_max/2));
 fprintf('%f %f \n',Ids_Peak,Ids_rms);
 
 %% Primary Side Turns Determination
-Ae=540*1e-6; % m^2  
-B_sat=1/2 ; %Tesla
+Ae=233*1e-6; % m^2  
+B_sat=0.3 ; %Tesla
 N_p= ((L_m*Ids_Peak)/(B_sat*Ae));
 fprintf('%f \n', N_p);
 
