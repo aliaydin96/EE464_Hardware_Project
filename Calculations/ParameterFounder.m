@@ -29,7 +29,7 @@ V_ds= V_dc_max+V_Ro;
 f_s= 40000; % Switching Frequecny Hertz
 K_f= 1; % for ccm 0.25-0.50 
 L_m= (( V_dc_min*D_max)^2)/(2*Input_power*f_s*K_f)...
-    *1e3; % mili Henry
+   *1e3; % mili Henry
 fprintf('% f mH \n', L_m);
 L_m=L_m*1e-3;
 
