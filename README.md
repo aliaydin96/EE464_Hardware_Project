@@ -1,1 +1,1 @@
-# EE464_Project_2
+# EE464_Hardware_Project
